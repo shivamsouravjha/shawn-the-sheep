@@ -7,13 +7,13 @@ CREATE TABLE events_db(
 CREATE TABLE attendee_DB(
     attendee_id SERIAL PRIMARY KEY,
     attendee_Name VARCHAR(255),
-    attendee_Age smallint(0,3),
-    attendee_Number smallint(0,10)  UNIQUE,
-    attendee_Email  VARCHAR (50) UNIQUE,
+    attendee_Age smallint,
+    attendee_Number smallint UNIQUE,
+    attendee_Email  VARCHAR(50) UNIQUE,
     attendee_Address VARCHAR(510)
 );
 CREATE TABLE event_attendee_DB(
-    attendee_id integer(0,5) REFERENCES attendee_DB(attendee_id),
-    events_id integer(0,5) REFERENCES events_db(events_id),
+    attendee_id integer REFERENCES attendee_DB(attendee_id),
+    events_id integer REFERENCES events_db(events_id),
     PRIMARY KEY(attendee_id,events_id)
 );

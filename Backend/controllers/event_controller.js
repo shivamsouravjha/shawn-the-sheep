@@ -3,13 +3,18 @@ const { validationResult } = require('express-validator');
 const pool =require("../models/db_schema");
 
 const add_event = async(req,res,next)=>{
-    const { description } =req.body;
+    const { event_name,event_date } =req.body;
     try{
-        console.log(description);
+        const new_event= await pool.query(
+            "INSERT INTO events_db(event_name,event_date) VALUES($1,$2) RETURNING *",
+            [event_name,event_date]
+        );
+        console.log('success');
+        res.json(new_event);
     }catch(err)
     {
         const error = new Erur(
-            'User exists already, please login instead.',
+            'event entry halted',
             422
           );
           return next(error);
