@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivamsouravjha/shawn-the-sheep.git"
+  },
+  "author": "shivam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivamsouravjha/shawn-the-sheep/issues"
+  },
+  "homepage": "https://github.com/shivamsouravjha/shawn-the-sheep#readme",
+  "devDependencies": {
+    "pg": "^8.5.1"
+  }
+}
