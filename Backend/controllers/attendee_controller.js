@@ -2,7 +2,7 @@ const Erur = require('../models/error');
 const { validationResult } = require('express-validator');
 const pool =require("../models/db_schema");
 
-const add_event = async(req,res,next)=>{
+const add_attendee = async(req,res,next)=>{
     const { attendee_Name,attendee_Age,attendee_Number,attendee_Email,attendee_Address } =req.body;
     try{
         const new_attendee= await pool.query(
@@ -21,4 +21,4 @@ const add_event = async(req,res,next)=>{
     }
 };
 
-exports.add_event=add_event;
+exports.add_attendee=add_attendee;
