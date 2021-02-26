@@ -37,7 +37,6 @@ const delete_event = async(req,res,next)=>{
           );
           return next(error);
     }
-    return  ;
 };
 exports.add_event=add_event;
 exports.delete_event=delete_event;

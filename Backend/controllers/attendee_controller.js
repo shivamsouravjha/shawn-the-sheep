@@ -23,7 +23,6 @@ const add_attendee = async(req,res,next)=>{
           );
           return next(error);
     }
-    return  ;
 };
 
 exports.add_attendee=add_attendee;
