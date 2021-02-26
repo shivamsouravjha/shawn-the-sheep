@@ -25,7 +25,7 @@ const login = async (req, res, next) => {
     return next(error);
   }
 };
-const getevents = async (req, res, next) => {
+const get_events_attendee = async (req, res, next) => {
   const { events_id } = req.body;  
   try {
       const new_event= await pool.query(
@@ -44,5 +44,25 @@ const getevents = async (req, res, next) => {
   }
 
 };
+const get_events = async (req, res, next) => {
+  const { events_id } = req.body;  
+  try {
+      const new_event= await pool.query(
+        "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id WHERE  event_attendee_DB.events_id = ($1) ",
+        [events_id]
+    );
+    console.log(new_event);
+    res.json(new_event);
+
+  } catch (err) {
+    const error = new Erur(
+      'Loggin in failed, please try again later.',
+      500
+    );
+    return next(error);
+  }
+
+};
 exports.login = login;
-exports.getevents = getevents;
+exports.get_events_attendee = get_events_attendee;
+exports.get_events = get_events;
