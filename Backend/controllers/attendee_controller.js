@@ -12,7 +12,7 @@ const add_attendee = async(req,res,next)=>{
         console.log(new_event.rows[0].attendee_id);
         const new_event_attendee= await pool.query(
             "INSERT INTO event_attendee_DB(attendee_id,events_id) VALUES($1,$2) RETURNING * ",
-            [1,2]
+            [new_event.rows[0].attendee_id,events_id]
         );
         res.json(new_event_attendee);
     }catch(err)

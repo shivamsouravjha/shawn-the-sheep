@@ -21,5 +21,23 @@ const add_event = async(req,res,next)=>{
     }
     return  ;
 };
-
+const delete_event = async(req,res,next)=>{
+    const { events_id } =req.body;
+    try{
+        const deleted_event= await pool.query(
+            "DELETE FROM events_db WHERE events_id=$1",
+            [events_id]
+        );
+        res.json('event deleted');
+    }catch(err)
+    {
+        const error = new Erur(
+            'event entry halted',
+            422
+          );
+          return next(error);
+    }
+    return  ;
+};
 exports.add_event=add_event;
+exports.delete_event=delete_event;
