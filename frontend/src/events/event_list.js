@@ -1,23 +1,23 @@
 import React, { useState, useCallback } from 'react';
+import Event_item from './event_item';
 import {
   BrowserRouter as Router,
   Route,
   Redirect,
   Switch
 } from 'react-router-dom';
-const  main_page = ()=> {
+const  Events_list = props=> {
+  if(props.items.length===0)
+  {
+    return(
+      <div>
+        <h1>No events as of now!</h1>
+      </div>
+    );
+  }
   return(
-  <div>
-    <h1> DEFINE YOURSELF</h1>
-    <ul className="header">
-      <li><a href="/">Attendee</a></li>
-      <li><a href="/admin_commands">Admin</a></li>
-    </ul>
-    <div className="content">
-       
-    </div>
-  </div>
+    
   );
 }
 
-export default main_page;
+export default Events_list;
