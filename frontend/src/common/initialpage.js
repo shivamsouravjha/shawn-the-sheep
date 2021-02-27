@@ -7,10 +7,11 @@ const  main_page = ()=> {
   <div>
 
     <h1 className="pageheader"> DEFINE YOURSELF</h1>
-    <ul className="header">
+   
+   <center> <ul className="header">
       <li> <Link to={`/admin`}> <button className="admin_div" >Admin</button></Link></li>
       <li> <Link to={`/user`}> <button className="user_div" >User</button></Link></li>
-    </ul>
+    </ul></center>
     <div className="content">
        
     </div>

@@ -22,14 +22,14 @@ const login = async(req,res,next)=>{
 };
 
 const get_events_attendee = async (req, res, next) => {
-  const { events_id } = req.body;
+  //const { events_id } = req.body;
   let new_event;  
   try {
        new_event= await pool.query(
-        "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id WHERE  event_attendee_DB.events_id = ($1) ",
-        [events_id]
-    );
-    console.log('w');
+        "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id" ////WHERE  event_attendee_DB.events_id = ($1) ",
+       /// "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id WHERE  event_attendee_DB.events_id = ($1) ",
+      //  [events_id]
+      ); res.json(new_event.rows);
   } catch (err) {
     const error = new Erur(
       'Loggin in failed, please try again later.',
@@ -37,9 +37,6 @@ const get_events_attendee = async (req, res, next) => {
     );
     return next(error);
   }
-  res.json({ new_event: new_event.map(user => user.toObject({ getters: true })) });
-  console.log({ new_event: new_event.map(user => user.toObject({ getters: true })) });
-
 };
 const get_events = async (req, res, next) => {
   try {
