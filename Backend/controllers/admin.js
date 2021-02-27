@@ -3,26 +3,18 @@ const { validationResult } = require('express-validator');
 const pool =require("../models/db_schema");
 
 const login = async (req, res, next) => {
-  const { username, password } = req.body;
+  const { password } = req.body;
 
-  let adminexisted;
-  
-  try {
-     // adminexisted = await .findOne({ username: username });
-  } catch (err) {
-    const error = new Erur(
-      'Loggin in failed, please try again later.',
-      500
-    );
-    return next(error);
-  }
-
-  if (!adminexisted || adminexisted.password !== password) {
+  const admin_password="251020251020";
+  if (admin_password !== password) {
     const error = new Erur(
       'Invalid credentials, could not log you in.',
       401
     );
     return next(error);
+  }
+  else{
+    res.json('mission alloweed');
   }
 };
 const get_events_attendee = async (req, res, next) => {
@@ -33,7 +25,7 @@ const get_events_attendee = async (req, res, next) => {
         [events_id]
     );
     console.log('w');
-    res.json(new_event);
+    res.json(new_event.fields);
 
   } catch (err) {
     const error = new Erur(
