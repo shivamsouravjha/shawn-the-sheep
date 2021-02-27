@@ -17,6 +17,7 @@ const  Form = ()=>{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })
+            window.location="/initial";
             console.log(response);
         }catch(err){
             console.log('Error')
@@ -28,7 +29,7 @@ const  Form = ()=>{
 			Attendee Registration Form </h1>
 		<p className="form_des">Thankyou for your interest towards attending this event. Kindly fill the details to confirm your attendance for the event.</p>
   <center>
-	<form  id="attendee_form"  name="attendee_form" onSubmit={onSubmitform}>
+	<form  action="/initial" id="attendee_form"  name="attendee_form" onSubmit={onSubmitform}>
 			<label for="name" className="label_field">Name <span > * </span> </label><br/>
 				<input type="text" name="name" className="input_field" value={attendee_Name} 
                 placeholder="Name" onChange={e =>setName(e.target.value)} required />  <br/><br/>
@@ -37,7 +38,7 @@ const  Form = ()=>{
     		<input type="number" name="age" className="input_field" value={attendee_Age} onChange={e =>setAge(e.target.value)} required /> <br/><br/>
 
         <label for="contact" className="label_field"> Your contact number (Don't start with 0) <span > * </span> </label><br/>
-    		<input type="text" name="contact" className="input_field" pattern="[1-9]{1}[0-9]{9}" required placeholder="your 10-digit number" 
+    		<input type="text" name="contact" className="input_field"  required placeholder="your 10-digit number" 
             value={attendee_Number} onChange={e =>setContact(e.target.value)}
             /> <br/><br/>
 

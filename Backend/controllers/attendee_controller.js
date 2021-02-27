@@ -4,18 +4,6 @@ const pool =require("../models/db_schema");
 
 const add_attendee = async(req,res,next)=>{
     const { attendee_Name,attendee_Age,attendee_Number,attendee_Email,attendee_Address,events_id } =req.body;
-    console.log(attendee_Name);
-    console.log(attendee_Age);
-    console.log(attendee_Number);
-    console.log(attendee_Email);
-    console.log(attendee_Address);
-    console.log(events_id);
-    console.log(typeof(attendee_Name));
-    console.log(typeof(attendee_Age));
-    console.log(typeof(attendee_Number));
-    console.log(typeof(attendee_Email));
-    console.log(typeof(attendee_Address));
-    console.log(typeof(events_id));
     try{
         const new_event= await pool.query(
             "INSERT INTO attendee_DB(attendee_Name,attendee_Age,attendee_Number,attendee_Email,attendee_Address) VALUES($1,$2,$3,$4,$5) RETURNING * ",

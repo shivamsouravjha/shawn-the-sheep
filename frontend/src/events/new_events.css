@@ -1,0 +1,30 @@
+body{
+    margin-top:5%;
+}
+.inputs{
+    width:25rem;
+    height:2.5rem;
+    margin-top:0.5rem;
+    font-size: 1.3rem;
+    background-color: white;
+    border: 1px black solid;
+}
+.labels{
+    font-size:1.5rem;
+    font-weight: bold;
+}
+
+.confirm_btns{
+    width:13rem;
+    height:3rem;
+    background-color:#381872;
+   color:white;
+    margin: auto 10%;
+    font-size: 1.5rem;
+}
+.form_heading{
+    font-size:4rem;
+    text-align: center;
+    margin-bottom: 3.5rem;
+
+}

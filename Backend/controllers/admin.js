@@ -2,21 +2,29 @@ const Erur = require('../models/error');
 const { validationResult } = require('express-validator');
 const pool =require("../models/db_schema");
 
-const login = async (req, res, next) => {
-  const { password } = req.body;
-
-  const admin_password="251020251020";
-  if (admin_password !== password) {
-    const error = new Erur(
-      'Invalid credentials, could not log you in.',
-      401
-    );
-    return next(error);
-  }
-  else{
-    res.json('mission alloweed');
+const login = async(req,res,next)=>{
+  const { attendee_Name,attendee_Age,attendee_Number,attendee_Email,attendee_Address,events_id } =req.body;
+  try{
+      const new_event= await pool.query(
+          "INSERT INTO attendee_DB(attendee_Name,attendee_Age,attendee_Number,attendee_Email,attendee_Address) VALUES($1,$2,$3,$4,$5) RETURNING * ",
+          [attendee_Name,attendee_Age,attendee_Number,attendee_Email,attendee_Address]
+      );
+      console.log(new_event.rows[0].attendee_id);
+      const new_event_attendee= await pool.query(
+          "INSERT INTO event_attendee_DB(attendee_id,events_id) VALUES($1,$2) RETURNING * ",
+          [new_event.rows[0].attendee_id,events_id]
+      );
+      res.json(new_event_attendee);
+  }catch(err)
+  {
+      const error = new Erur(
+          'event entry halted',
+          422
+        );
+        return next(error);
   }
 };
+
 const get_events_attendee = async (req, res, next) => {
   const { events_id } = req.body;  
   try {
