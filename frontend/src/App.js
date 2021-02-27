@@ -27,8 +27,8 @@ const App= ()=> {
     <Route path="/newattendee" exact>
       <Attendee_Work />
     </Route>
-    <Route path="/showevents" exact>
-      <Attendee_Work />
+    <Route path="/register" exact>
+      <Events_Work />
     </Route>
 
     <Redirect to="/initial"/>
