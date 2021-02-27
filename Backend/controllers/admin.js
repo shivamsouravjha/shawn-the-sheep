@@ -3,17 +3,13 @@ const { validationResult } = require('express-validator');
 const pool =require("../models/db_schema");
 
 const login = async(req,res,next)=>{
-  const { attendee_Name,attendee_Age,attendee_Number,attendee_Email,attendee_Address,events_id } =req.body;
+  const { admin_name,events_id } =req.body;
   try{
       const new_event= await pool.query(
           "INSERT INTO attendee_DB(attendee_Name,attendee_Age,attendee_Number,attendee_Email,attendee_Address) VALUES($1,$2,$3,$4,$5) RETURNING * ",
-          [attendee_Name,attendee_Age,attendee_Number,attendee_Email,attendee_Address]
+          [admin_name,attendee_Address]
       );
       console.log(new_event.rows[0].attendee_id);
-      const new_event_attendee= await pool.query(
-          "INSERT INTO event_attendee_DB(attendee_id,events_id) VALUES($1,$2) RETURNING * ",
-          [new_event.rows[0].attendee_id,events_id]
-      );
       res.json(new_event_attendee);
   }catch(err)
   {
@@ -26,15 +22,14 @@ const login = async(req,res,next)=>{
 };
 
 const get_events_attendee = async (req, res, next) => {
-  const { events_id } = req.body;  
+  const { events_id } = req.body;
+  let new_event;  
   try {
-      const new_event= await pool.query(
+       new_event= await pool.query(
         "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id WHERE  event_attendee_DB.events_id = ($1) ",
         [events_id]
     );
     console.log('w');
-    res.json(new_event.fields);
-
   } catch (err) {
     const error = new Erur(
       'Loggin in failed, please try again later.',
@@ -42,21 +37,22 @@ const get_events_attendee = async (req, res, next) => {
     );
     return next(error);
   }
+  res.json({ new_event: new_event.map(user => user.toObject({ getters: true })) });
+  console.log({ new_event: new_event.map(user => user.toObject({ getters: true })) });
 
 };
 const get_events = async (req, res, next) => {
-  const { events_id } = req.body;  
   try {
       const new_event= await pool.query(
-        "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id WHERE  event_attendee_DB.events_id = ($1) ",
-        [events_id]
+        "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id ",
     );
-    console.log(new_event);
-    res.json(new_event);
+    console.log('1');
 
+    res.json(new_event.rows);
+  
   } catch (err) {
     const error = new Erur(
-      'Loggin in failed, please try again later.',
+      'watching events failed, please try again later.',
       500
     );
     return next(error);

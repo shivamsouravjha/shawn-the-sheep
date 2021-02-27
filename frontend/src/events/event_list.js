@@ -1,7 +1,7 @@
 import React from 'react';
 import Events_item from './event_item';
 const  Events_list = props => {
-  if(props.items.length === 0)
+  if(!props.items.length)
   {
     return(
       <div>

@@ -12,7 +12,7 @@ const  Admin_login = ()=>{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })
-            console.log(password);
+            console.log(response);
         }catch(err){
             console.log('Error')
         }
