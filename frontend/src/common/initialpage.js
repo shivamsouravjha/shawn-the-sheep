@@ -1,15 +1,15 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-
+import './initialpage.css';
 const  main_page = ()=> {
   return(
 
   <div>
 
-    <h1> DEFINE YOURSELF</h1>
+    <h1 className="pageheader"> DEFINE YOURSELF</h1>
     <ul className="header">
-      <li> <Link to={`/admin`}> <h1>Admin</h1></Link></li>
-      <li> <Link to={`/user`}> <h1>User</h1></Link></li>
+      <li> <Link to={`/admin`}> <button className="admin_div" >Admin</button></Link></li>
+      <li> <Link to={`/user`}> <button className="user_div" >User</button></Link></li>
     </ul>
     <div className="content">
        

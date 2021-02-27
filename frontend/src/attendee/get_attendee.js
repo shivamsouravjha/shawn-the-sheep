@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react';
-import Events_list from './event_list';
-const Events = ()=>{
+import Attendee_list from './attendee_list';
+const Get_Attendee = ()=>{
     const [loadedevents,setloadedevents] = useState('');
     const get_events = async ()=>{
         try{
@@ -18,6 +18,6 @@ const Events = ()=>{
     const lol=[];
     console.log(loadedevents);
 
-    return <Events_list items={loadedevents}/>;
+    return <Attendee_list items={loadedevents}/>;
 };
-export default Events;
+export default Get_Attendee;

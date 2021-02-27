@@ -44,7 +44,7 @@ const get_events_attendee = async (req, res, next) => {
 const get_events = async (req, res, next) => {
   try {
       const new_event= await pool.query(
-        "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id ",
+        "SELECT * FROM events_db ",
     );
     console.log('1');
 
