@@ -1,13 +1,7 @@
-import React, { useState, useCallback } from 'react';
-import Event_item from './event_item';
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch
-} from 'react-router-dom';
-const  Events_list = props=> {
-  if(props.items.length===0)
+import React from 'react';
+import Events_item from './event_item';
+const  Events_list = props => {
+  if(props.items.length === 0)
   {
     return(
       <div>
@@ -16,7 +10,13 @@ const  Events_list = props=> {
     );
   }
   return(
-    
+    <ul>
+      {props.items.map(events=>(
+      <Events_item key={events.events_id}
+      id={events.events_id} event_name={events.event_name}
+      event_date={events.event_date}
+      />))}
+    </ul>
   );
 }
 

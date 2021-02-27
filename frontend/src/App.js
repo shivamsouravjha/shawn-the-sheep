@@ -8,7 +8,7 @@ import {
 import Initialpage from './common/initialpage';
 import Attendee_Work from '../src/attendee/user_work';
 import Admin_Commands from '../src/admin/admin_commands';
-import Events_Work from './events/event_list';
+import Events_Work from './events/events';
 const App= ()=> {
   return(
   <Router>

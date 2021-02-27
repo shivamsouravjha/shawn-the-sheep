@@ -1,23 +1,18 @@
 import React, { useState, useCallback } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch
-} from 'react-router-dom';
-const  Events_list = props=> {
+const  Events_item = props=> {
   return(
-  <div>
-    <h1> DEFINE YOURSELF</h1>
-    <ul className="header">
-      <li><a href="/">Attendee</a></li>
-      <li><a href="/admin_commands">Admin</a></li>
-    </ul>
-    <div className="content">
-       
-    </div>
-  </div>
+        <li className="Events_item">
+            <div className="Events_info">
+                <div className="Events_Name">
+                    <h1>{props.event_name} </h1>
+                </div>
+                <div className="Events_Date">
+                    <h1> {props.event_date}</h1>
+                </div>
+                
+            </div>
+        </li>
   );
 }
 
-export default main_page;
+export default Events_item;
