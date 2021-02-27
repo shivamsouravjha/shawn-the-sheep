@@ -9,9 +9,12 @@ import Initialpage from './common/initialpage';
 const App= ()=> {
   return(
   <Router>
-    <Route path='/'>
+    <Switch>
+    <Route path="/initial">
       <Initialpage />
     </Route>
+    <Redirect to="/"/>
+    </Switch>
   </Router>
   );
 }
