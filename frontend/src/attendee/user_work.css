@@ -1,0 +1,41 @@
+*{
+    background-color:#b6d1e7;
+
+}
+.form_head{
+    text-align: center;
+}
+.form_des{
+    text-align: center;
+}
+
+.attendee_form_div{
+    box-sizing: border-box;
+
+}
+.input_field{
+    width:20rem;
+    height:1.9rem;
+    margin-top:0.5rem;
+    font-size: 1.1rem;
+    background-color: white;
+    border: 1px black solid;
+}
+
+.confirm_button{
+    width:8rem;
+    height:2.3rem;
+    background-color:#381872;
+   color:white;
+    margin: auto 10%;
+    font-size: 1.3rem;;
+}
+.label_field{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+span{
+    color:#ab0707
+
+}
