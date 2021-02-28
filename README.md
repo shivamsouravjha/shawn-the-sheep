@@ -32,3 +32,7 @@ Authentication to be improved along with using Event ID for operation about view
 * Copy paste all commands written in Database.sql.
 
 Server has been started successfully and you've to enter data via frontend.
+
+# Current Major issues of this project
+* Deployment issuses,although successfully built its not responding.
+* Issues with displaying Attendee of a certain event
