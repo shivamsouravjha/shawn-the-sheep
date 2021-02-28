@@ -6,7 +6,7 @@ const  Events_item = props=> {
     if(isLoggedIn){
         return(
         <li className="Events_item">
-        <Link to={`/initial`}>
+        <Link to={`/newattendee`}>
         <div className="Events_info">
             <div className="Events_Name">
                  <h1>{props.event_name} </h1>

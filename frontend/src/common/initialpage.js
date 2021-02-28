@@ -10,7 +10,7 @@ const  main_page = ()=> {
    
    <center> <ul className="header">
       <li> <Link to={`/admin`}> <button className="admin_div" >Admin</button></Link></li>
-      <li> <Link to={`/newattendee`}> <button className="user_div" >User</button></Link></li>
+      <li> <Link to={`/registerevent`}> <button className="user_div" >User</button></Link></li>
     </ul></center>
     <div className="content">
        
