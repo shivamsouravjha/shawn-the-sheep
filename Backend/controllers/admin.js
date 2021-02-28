@@ -3,16 +3,15 @@ const { validationResult } = require('express-validator');
 const pool =require("../models/db_schema");
 
 const login = async(req,res,next)=>{
-  const { admin_password } =req.body;
-  console.log(admin_password);
+  const { admin_name,admin_password } =req.body;
 
   try{
       const new_event= await pool.query(
-          "SELECT COUNT(*) FROM ADMIN_DB WHERE ADMIN_DB.admin_password =$1;",
-          [admin_password]
+          "SELECT COUNT(*) FROM ADMIN_DB WHERE (ADMIN_DB.admin_name = $1 AND ADMIN_DB.admin_password =$2);",
+          [admin_name,admin_password]
           
       );
-      console.log(new_event.rows);
+      console.log(new_event.rows[0].count);
       res.json(new_event.rows);
   }catch(err)
   {
@@ -32,8 +31,7 @@ const get_events_attendee = async (req, res, next) => {
         "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id" ////WHERE  event_attendee_DB.events_id = ($1) ",
        /// "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id WHERE  event_attendee_DB.events_id = ($1) ",
       //  [events_id]
-      );
-       res.json(new_event.rows);
+      ); res.json(new_event.rows);
   } catch (err) {
     const error = new Erur(
       'Loggin in failed, please try again later.',

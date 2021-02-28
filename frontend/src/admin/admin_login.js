@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './admin_login.css';
 const  Admin_login = ()=>{
     const [admin_password,setPassword]=useState('');
-    
+    const [admin_name,setadmin_name]=useState('shivam');
     const onSubmitform = async e =>{
         e.preventDefault();
         try{
-            const body={admin_password};
+            const body={admin_password,admin_name};
 
             const response = await fetch("http://localhost:5000/api/admin/login",{
                 method:"POST",headers:{"Content-Type":"application/json"},
