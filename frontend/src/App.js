@@ -11,6 +11,8 @@ import Get_Attendee from '../src/attendee/get_attendee';
 import Events_Work from './events/events';
 import Admin_login from '../src/admin/admin_login';
 import Create_Events from '../src/events/new_event';
+import Admin_Command from '../src/admin/admin_commands';
+import Delete_Event from '../src/events/deleteevent';
 const App= ()=> {
   return(
   <Router>
@@ -32,6 +34,12 @@ const App= ()=> {
     </Route>
     <Route path="/getattendee" exact>
       <Get_Attendee />
+    </Route>
+    <Route path="/attendeecommand" exact>
+      <Admin_Command />
+    </Route>
+    <Route path="/deleteevent" exact>
+      <Delete_Event />
     </Route>
 
     <Redirect to="/initial"/>

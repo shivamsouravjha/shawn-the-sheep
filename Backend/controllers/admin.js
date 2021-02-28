@@ -3,14 +3,17 @@ const { validationResult } = require('express-validator');
 const pool =require("../models/db_schema");
 
 const login = async(req,res,next)=>{
-  const { admin_name,events_id } =req.body;
+  const { admin_password } =req.body;
+  //console.log(admin_password);
+
   try{
       const new_event= await pool.query(
-          "INSERT INTO attendee_DB(attendee_Name,attendee_Age,attendee_Number,attendee_Email,attendee_Address) VALUES($1,$2,$3,$4,$5) RETURNING * ",
-          [admin_name,attendee_Address]
+          "SELECT COUNT(*) FROM ADMIN_DB WHERE ADMIN_DB.admin_password =$1;",
+          [admin_password]
+          
       );
-      console.log(new_event.rows[0].attendee_id);
-      res.json(new_event_attendee);
+    //  console.log(new_event.rows[0].count);
+      res.json(new_event.rows[0].count);
   }catch(err)
   {
       const error = new Erur(

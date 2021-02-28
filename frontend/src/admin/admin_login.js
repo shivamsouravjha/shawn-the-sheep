@@ -1,18 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import './admin_login.css';
 const  Admin_login = ()=>{
-    const [password,setPassword]=useState("");
+    const [admin_password,setPassword]=useState("");
     
     const onSubmitform = async e =>{
         e.preventDefault();
         try{
-            const body={password};
-            
+            const body={admin_password};
+
             const response = await fetch("http://localhost:5000/api/admin/login",{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })
             console.log(response);
+            if(response!='0')
+            {
+                window.location="/attendeecommand";
+
+            }
+            else{
+                window.location="/initial";
+
+            }
         }catch(err){
             console.log('Error')
         }
@@ -25,7 +34,7 @@ const  Admin_login = ()=>{
   <center>
 	<form  action="/initial" id="admin_form"  name="admin_form" onSubmit={onSubmitform}>
 			<label for="password" className="label">Enter the password first! </label><br/>
-				<input type="password" name="password" className="input" value={password} 
+				<input type="password" name="password" className="input" value={admin_password} 
                 onChange={e =>setPassword(e.target.value)} required />  <br/><br/>
 
   		

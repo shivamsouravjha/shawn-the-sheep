@@ -1,22 +1,22 @@
-import React, { Component } from "react";
- 
-class Stuff extends Component {
-  render() {
-    return (
-      <div>
-        <h2>STUFF</h2>
-        <p>Mauris sem velit, vehicula eget sodales vitae,
-        rhoncus eget sapien:</p>
-        <ol>
-          <li>Nulla pulvinar diam</li>
-          <li>Facilisis bibendum</li>
-          <li>Vestibulum vulputate</li>
-          <li>Eget erat</li>
-          <li>Id porttitor</li>
-        </ol>
-      </div>
-    );
-  }
+import React, { useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
+const  Admin_Command = ()=> {
+  return(
+
+  <div>
+
+    <h1 className="pageheader"> DEFINE YOURSELF</h1>
+   
+   <center> <ul className="header">
+      <li> <Link to={`/registerevent`}> <button className="admin_div" >Add Event</button></Link></li>
+      <li> <Link to={`/deleteevent`}> <button className="user_div" >Delete Event</button></Link></li>
+      <li> <Link to={`/getattendee`}> <button className="user_div" >View Attendee</button></Link></li>
+    </ul></center>
+    <div className="content">
+       
+    </div>
+  </div>
+  );
 }
- 
-export default Stuff;
+
+export default Admin_Command;

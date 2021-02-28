@@ -37,6 +37,7 @@ const delete_event = async(req,res,next)=>{
           );
           return next(error);
     }
+    res.json('Unable to Delete please check the ID');
 };
 
 exports.add_event=add_event;
