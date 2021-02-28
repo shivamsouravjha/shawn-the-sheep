@@ -25,7 +25,7 @@ Authentication to be improved along with using Event ID for operation about view
 * Go to location where Postgresql is installed.
 * CD to version of Postgres
 * CD to bin and start the Command Prompt
-* Type ##psql -U postgres 
+* Type **psql -U postgres** .
 * For Password type  123456
 * Copy paste Create Database from Database.sql
 * Type \c and database name.
