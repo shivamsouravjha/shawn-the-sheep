@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './new_events.css';
  
-const  Create_Events = ()=>{
+const  Delete_Event = ()=>{
    
     const [events_id,setevents_id]=useState("");
 
@@ -14,7 +14,7 @@ const  Create_Events = ()=>{
                 method:"DELETE",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })
-            console.log(response);
+            window.location="/success";
         }catch(err){
             console.log('Error')
         }
@@ -46,4 +46,4 @@ const  Create_Events = ()=>{
   
 };
  
-export default Create_Events;
+export default Delete_Event;

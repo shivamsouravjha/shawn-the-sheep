@@ -8,7 +8,7 @@ const  Admin_Command = ()=> {
     <h1 className="pageheader"> DEFINE YOURSELF</h1>
    
    <center> <ul className="header">
-      <li> <Link to={`/registerevent`}> <button className="admin_div" >Add Event</button></Link></li>
+      <li> <Link to={`/admin/newevents`}> <button className="admin_div" >Add Event</button></Link></li>
       <li> <Link to={`/deleteevent`}> <button className="user_div" >Delete Event</button></Link></li>
       <li> <Link to={`/getattendee`}> <button className="user_div" >View Attendee</button></Link></li>
     </ul></center>

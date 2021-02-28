@@ -17,7 +17,7 @@ const  Form = ()=>{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })
-            window.location="/initial";
+            window.location="/success";
             console.log(response);
         }catch(err){
             console.log('Error')

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './admin_login.css';
 const  Admin_login = ()=>{
-    const [admin_password,setPassword]=useState("");
+    const [admin_password,setPassword]=useState('');
     
     const onSubmitform = async e =>{
         e.preventDefault();
@@ -12,19 +12,16 @@ const  Admin_login = ()=>{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })
-            console.log(response);
-            if(response!='0')
-            {
-                window.location="/attendeecommand";
-
+            const datainjson = await response.json();
+            const numtocheck = datainjson[0].count.toString();
+            if(numtocheck.localeCompare("0")){
+                window.location="/admincommand"
             }
-            else{
-                window.location="/initial";
-
-            }
+           
         }catch(err){
             console.log('Error')
         }
+
     }
     return (   
      <div className="admin_form_div">

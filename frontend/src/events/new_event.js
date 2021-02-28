@@ -15,8 +15,7 @@ const  Create_Events = ()=>{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })
-            window.location="/newevents";
-            console.log(response);
+            window.location="/success";
         }catch(err){
             console.log('Error')
         }
