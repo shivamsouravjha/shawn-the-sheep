@@ -2,6 +2,13 @@
 
 The Project is an Event-Booking Webapp made from scratch using  PERN STACK .
 
+# What is What in **Backend**
+* Controllers Folder works the command of admin. Login,get ID of attendee of event(although ID specific is commented because of work in front-end),events to display all the events.
+* controllers also have the add attendee and add event ,delete event commands.
+* Models have the ID,password and other details for Postgres.
+* routers have operation to work different link of Admin,attendee and events.
+* Database_SQL is about what commends you must to start the postgres.
+
 # Upcoming Upgradations
 Authentication to be improved along with using Event ID for operation about viewing Data and modifying events.
 
@@ -36,3 +43,4 @@ Server has been started successfully and you've to enter data via frontend.
 # Current Major issues of this project
 * Deployment issuses,although successfully built its not responding.
 * Issues with displaying Attendee of a certain event
+* Everything,every commands works in backend with Postman just tuning with frontend to be done.
