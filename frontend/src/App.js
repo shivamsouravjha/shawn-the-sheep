@@ -46,8 +46,7 @@ const App= ()=> {
     </Route>
     <Route path="/deleteevent" exact>
     <Events_ID />
-
-      <Delete_Event />
+    <Delete_Event />
     </Route>
     <Route path="/success" exact>
       <Operation_Success />
