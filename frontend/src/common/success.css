@@ -1,0 +1,24 @@
+.headback_btn{
+    width:23rem;
+    height:7rem;
+    font-size:2rem;
+    -webkit-border-radius:1rem;
+    -moz-border-radius:1rem;
+    -o-border-radius:1rem;
+    border:5px rgb(19, 18, 18) double;
+    background-color: #381872;
+    color:white;
+    text-align: center; 
+}
+.headback_btn:hover{
+    background:#41217e;
+    transform: translateY(-0.3rem);
+    transition: transform 150ms;
+}
+
+.success_head{
+    text-align:center;
+    font-weight: bolder;
+    font-size:5rem;
+    margin:6rem;
+}

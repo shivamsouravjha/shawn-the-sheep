@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './admin_login.css';
 const  Admin_login = ()=>{
     const [admin_password,setPassword]=useState('');
-    const [admin_name,setadmin_name]=useState('shivam');
+    const [admin_name,setadmin_name]=useState('');
     const onSubmitform = async e =>{
         e.preventDefault();
         try{
@@ -30,7 +30,10 @@ const  Admin_login = ()=>{
 	
   <center>
 	<form  action="/initial" id="admin_form"  name="admin_form" onSubmit={onSubmitform}>
-			<label for="password" className="label">Enter the password first! </label><br/>
+    <label for="name" className="label">Enter your name! </label><br/>
+				<input type="text" name="name" className="input" value={admin_name} 
+                onChange={e =>setadmin_name(e.target.value)} required />  <br/><br/>
+			<label for="password" className="label">Enter the password! </label><br/>
 				<input type="password" name="password" className="input" value={admin_password} 
                 onChange={e =>setPassword(e.target.value)} required />  <br/><br/>
 

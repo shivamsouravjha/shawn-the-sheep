@@ -12,8 +12,8 @@ const  Attendee_list = props => {
   return(
     <ul>
       {props.items.map(events=>(
-      <Attendee_each key={events.events_id}
-      id={events.events_id} attendee_id={events.attendee_id}
+      <Attendee_each key={events.attendee_id}
+      id={events.attendee_id} attendee_id={events.attendee_id}
       event_date={events.event_date}
       />))}
     </ul>

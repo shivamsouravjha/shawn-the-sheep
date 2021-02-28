@@ -1,15 +1,16 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import './success.css';
 const  Admin_Command = ()=> {
   return(
 
   <div>
 
-    <h1 className="pageheader"> Operation Successful!</h1>
+    <h1 className="success_head"> Operation Successful!</h1>
    
-   <center> <ul className="header">
-      <li> <Link to={`/initial`}> <button className="admin_div" >Headback to Homepage</button></Link></li>
-    </ul></center>
+   <center> 
+      <Link to={`/initial`}> <button className="headback_btn" >Headback to Homepage</button></Link>
+  </center>
     <div className="content">
        
     </div>
