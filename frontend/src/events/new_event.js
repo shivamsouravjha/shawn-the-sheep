@@ -11,7 +11,7 @@ const  Create_Events = ()=>{
         try{
             const body={event_name,event_date};
             
-            const response = await fetch("http://localhost:5000/api/newevents",{
+            const response = await fetch("/newevents",{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })

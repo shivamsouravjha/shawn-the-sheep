@@ -13,7 +13,7 @@ const  Form = ()=>{
         try{
             const body={attendee_Name,attendee_Age,attendee_Number,attendee_Email,attendee_Address,events_id};
             
-            const response = await fetch("http://localhost:5000/api/newattendee",{
+            const response = await fetch("/newattendee",{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })

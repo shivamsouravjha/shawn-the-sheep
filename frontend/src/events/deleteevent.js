@@ -10,7 +10,7 @@ const  Delete_Event = ()=>{
         try{
             const body={events_id};
             
-            const response = await fetch("http://localhost:5000/api/newevents",{
+            const response = await fetch("/newevents",{
                 method:"DELETE",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })

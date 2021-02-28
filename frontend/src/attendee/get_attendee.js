@@ -4,7 +4,7 @@ const Get_Attendee = ()=>{
     const [loadedattende,setloadedattende] = useState('');
     const get_events = async ()=>{
         try{
-            const response = await fetch("http://localhost:5000/api/admin/")
+            const response = await fetch("/api/admin/")
             const jsonData = await response.json()
             setloadedattende(jsonData);
         }catch(err)

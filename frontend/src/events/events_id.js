@@ -4,7 +4,7 @@ const Events_ID = ()=>{
     const [loadedevents,setloadedevents] = useState('');
     const get_events = async ()=>{
         try{
-            const response = await fetch("http://localhost:5000/api/admin/events")
+            const response = await fetch("/admin/events")
             const jsonData = await response.json()
             setloadedevents(jsonData);
         }catch(err)

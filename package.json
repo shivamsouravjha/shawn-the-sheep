@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "engines": {
+    "node":"v14.12.0",
+    "npm":"6.14.8"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "heroku-postbuild":"cd Backend && npm install && npm start"
+    "heroku-postbuild": "cd frontend && npm install && npm start"
   },
   "repository": {
     "type": "git",

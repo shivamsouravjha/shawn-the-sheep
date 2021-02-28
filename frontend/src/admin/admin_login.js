@@ -8,7 +8,7 @@ const  Admin_login = ()=>{
         try{
             const body={admin_password,admin_name};
 
-            const response = await fetch("http://localhost:5000/api/admin/login",{
+            const response = await fetch("/admin/login",{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
             })
