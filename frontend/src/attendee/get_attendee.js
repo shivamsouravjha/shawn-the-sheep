@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import Attendee_list from '../events/event_item';
+import Attendee_list from './attendee_list';
 const Get_Attendee = ()=>{
     const [loadedattende,setloadedattende] = useState('');
     const get_events = async ()=>{
@@ -15,9 +15,9 @@ const Get_Attendee = ()=>{
     useEffect(()=>{
         get_events();
     },[]);
-    const lol=[];
-    console.log(loadedattende);
+      const lol=[{attendee_id:"2",event_date:"12-21-1"}];
+    console.log(lol);
 
-    return <Attendee_list items={loadedattende}/>;
+    return <Attendee_list items={lol}/>;
 };
 export default Get_Attendee;

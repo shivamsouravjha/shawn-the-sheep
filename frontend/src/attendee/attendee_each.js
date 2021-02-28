@@ -5,17 +5,13 @@ const  Events_item = props=> {
         
     if(isLoggedIn){
         return(
-        <li className="Events_item">
-        <Link to={`/initial`}>
-        <div className="Events_info">
-            <div className="Events_Name">
-                 <h1>{props.attendee_Name} </h1>
+        <li className="Attendee_item">
+        <div className="Attendee_info">
+            <div className="Attendee_Name">
+                 <h1>{props.attendee_id} </h1>
             </div>
-           <div className="Events_Date">
-                <h1> {props.attendee_Age}</h1>
-           </div>
+           
         </div>
-        </Link>
         </li>);}
     else{
 
