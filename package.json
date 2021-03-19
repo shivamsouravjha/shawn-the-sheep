@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "engines": {
-    "node":"v14.12.0",
-    "npm":"6.14.8"
+    "node": "v14.12.0",
+    "npm": "6.14.8"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/shivamsouravjha/shawn-the-sheep#readme",
   "devDependencies": {
+    "nodemon": "^2.0.7",
     "pg": "^8.5.1",
     "router": "^1.3.5"
   },

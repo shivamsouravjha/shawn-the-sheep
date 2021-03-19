@@ -28,7 +28,7 @@ const get_events_attendee = async (req, res, next) => {
   let new_event;  
   try {
        new_event= await pool.query(
-        "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id" ////WHERE  event_attendee_DB.events_id = ($1) ",
+        "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id"
        /// "SELECT * FROM event_attendee_DB RIGHT JOIN attendee_DB ON event_attendee_DB.attendee_id = attendee_DB.attendee_id WHERE  event_attendee_DB.events_id = ($1) ",
       //  [events_id]
       ); res.json(new_event.rows);
