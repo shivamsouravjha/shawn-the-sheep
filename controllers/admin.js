@@ -7,7 +7,7 @@ const login = async(req,res,next)=>{
 
   try{
       const new_event= await pool.query(
-          "SELECT COUNT(*) FROM ADMIN_DB WHERE (ADMIN_DB.admin_name = $1 AND ADMIN_DB.admin_password =$2);",
+          `SELECT COUNT(*) FROM ADMIN_DB WHERE (ADMIN_DB.admin_name = $1 AND ADMIN_DB.admin_password =$2);`,
           [admin_name,admin_password]
           
       );
