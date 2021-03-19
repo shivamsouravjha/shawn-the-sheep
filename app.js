@@ -8,10 +8,10 @@ const path = require("path");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname,"frontend/build")));
 if(process.env.NODE_END==="production"){
-    app.use(express.static(path.join(__dirname,"client/build")))
+    app.use(express.static(path.join(__dirname,"frontend/build")));
 }
-console.log((path.join(__dirname,"client/build")));
 app.use('/api/newevents',event_router );
 app.use('/api/newattendee',attendee_router );
 app.use('/api/admin',admin );
