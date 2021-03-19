@@ -16,7 +16,13 @@ Authentication to be improved along with using Event ID for operation about view
 * Git star(optional)
 * Git Fork 
 * Git Clone 
-* NPM Start to Start 
+* NPM Start to Start
+* * CD Backend and NPM Install to install dependencies of Backend.
+* NPM Start to Start Server
+* Open Other power shell
+* CD frontend and NPM Install to install dependencies of frontend.
+* NPM Start to start the frontend.
+ 
 
 # Dependency Software Must in system to Run this
 * NODEJS 
