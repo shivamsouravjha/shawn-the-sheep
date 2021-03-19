@@ -11,7 +11,7 @@ const  Admin_login = ()=>{
             const response = await fetch("/admin/login",{
                 method:"POST",headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(body)
-            })
+            });
             const datainjson = await response.json();
             const numtocheck = datainjson[0].count.toString();
             if(numtocheck.localeCompare("0")){
