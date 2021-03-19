@@ -1,4 +1,4 @@
-const Pool =require("pg").Pool;
+const Pool =require("pg").Info;
 const devconfig = {
     user: "postgres",
     host: "localhost",
